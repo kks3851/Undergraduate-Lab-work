@@ -1,0 +1,22 @@
+Circuit: * C:\Users\Karan\Desktop\workshop\extc\sem 6\ce-4(vlsi and tv)\exp1 21.1\series_pass.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Apr 18 13:33:05 2015
+Total elapsed time: 0.178 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 545
+traniter = 534
+tranpoints = 268
+accept = 268
+rejected = 0
+matrix size = 5
+fillins = 0
+solver = Normal
+Matrix Compiler1: 132 bytes object code size  0.2/0.2/[0.2]
+Matrix Compiler2: 335 bytes object code size  0.2/0.3/[0.2]
+
+
