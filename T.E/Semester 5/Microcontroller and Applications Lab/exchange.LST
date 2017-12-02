@@ -1,0 +1,25 @@
+8051 Assembler           Version 1.00   10/23/114 13:58:15    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\exchange.a51
+
+
+
+    1 0000 7820                 mov r0,#20h
+    2 0002 7930                 mov r1,#30h
+    3 0004 7F0A                 mov r7,#0ah
+    4 0006 E6           loop:   mov a,@r0
+    5 0007 FA                   mov r2,a
+    6 0008 E7                   mov a,@r1
+    7 0009 F6                   mov @r0,a
+    8 000A EA                   mov a,r2
+    9 000B F7                   mov @r1,a
+   10 000C 08                   inc r0
+   11 000D 09                   inc r1
+   12 000E DFF6                 djnz r7,loop
+   13 0010 80FE         here:   sjmp here
+   14 0012                      
+
+Defined Symbols:
+
+Defined Labels:
+  here                                      000010  16
+  loop                                      000006  6

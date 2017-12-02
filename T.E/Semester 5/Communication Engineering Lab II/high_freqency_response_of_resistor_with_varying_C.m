@@ -1,0 +1,17 @@
+R=2000;
+C1=5*(10^(-12));
+L=52*(10^(-9));
+C2=10*(10^(-12));
+C3=1*(10^(-12));
+f=1000:10000:10000000000;
+z1=(1i*2*3.14*f*L)+(1./((1i*2*3.14*f*C1)+(1./R)));
+semilogx(f,abs(z1),'r');
+grid on;
+hold on;
+z2=(1i*2*3.14*f*L)+(1./((1i*2*3.14*f*C2)+(1./R)));
+semilogx(f,abs(z2),'g');
+z3=(1i*2*3.14*f*L)+(1./((1i*2*3.14*f*C3)+(1./R)));
+semilogx(f,abs(z3),'b');
+xlabel('Frequency');
+ylabel('Impedance');
+title(' HIGH FREQUENCY RESPONSE OF RESISTOR WITH VARYING CAPACITOR');

@@ -1,0 +1,17 @@
+R=2000;
+C=5*(10^(-12));
+L1=52*(10^(-9));
+L2=100*(10^(-9));
+L3=30*(10^(-9));
+f=1000:10000:10000000000;
+z1=(1i*2*3.14*f*L1)+(1./((1i*2*3.14*f*C)+(1./R)));
+semilogx(f,abs(z1),'r');
+grid on;
+hold on;
+z2=(1i*2*3.14*f*L2)+(1./((1i*2*3.14*f*C)+(1./R)));
+semilogx(f,abs(z2),'g');
+z3=(1i*2*3.14*f*L3)+(1./((1i*2*3.14*f*C)+(1./R)));
+semilogx(f,abs(z3),'b');
+xlabel('Frequency');
+ylabel('Impedance');
+title(' HIGH FREQUENCY RESPONSE OF RESISTOR WITH VARYING INDUCTOR');

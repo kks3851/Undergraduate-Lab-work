@@ -1,0 +1,2 @@
+Dependencies for Project 'experiments', Target 'Target 1': (DO NOT MODIFY !)
+F (.\smallest.s)(0x54367754)(--device DARMP --pd "__EVAL SETA 1" -g --apcs=interwork -I "C:\Keil\ARM\INC\Philips" --list "smallest.lst" --xref -o "smallest.o")

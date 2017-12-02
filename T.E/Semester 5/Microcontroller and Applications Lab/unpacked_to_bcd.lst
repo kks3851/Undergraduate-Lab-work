@@ -1,0 +1,51 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             mycode,code,readonly
+    2 00000000         entry
+    3 00000000 E3A01009        mov              r1,#09
+    4 00000004 E3A02002        mov              r2,#02
+    5 00000008 E1A03201        mov              r3,r1,lsl#4
+    6 0000000C E0834002        add              r4,r3,r2
+    7 00000010 EAFFFFFE 
+                       stop    b                stop
+    8 00000014                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork --depend=unpacked_
+to_bcd.d -ounpacked_to_bcd.o -IC:\Keil\ARM\RV31\Inc -IC:\Keil\ARM\CMSIS\Include
+ -IC:\Keil\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=unpacked_to_bcd.l
+st unpacked_to_bcd.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file unpacked_to_bcd.s
+   Uses
+      None
+Comment: entry unused
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 1 in file unpacked_to_bcd.s
+   Uses
+      None
+Comment: mycode unused
+stop 00000010
+
+Symbol: stop
+   Definitions
+      At line 7 in file unpacked_to_bcd.s
+   Uses
+      At line 7 in file unpacked_to_bcd.s
+Comment: stop used once
+3 symbols
+323 symbols in table

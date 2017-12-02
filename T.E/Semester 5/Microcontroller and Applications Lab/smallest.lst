@@ -1,0 +1,93 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             small,code,readonly
+    2 00000000         entry
+    3 00000000 E3A000FF        mov              r0,#0xff
+    4 00000004 E3A0300A        mov              r3,#10
+    5 00000008 E59F1040        ldr              r1,=series
+    6 0000000C E4912004 
+                       up      ldr              r2,[r1],#4
+    7 00000010 E1520000        cmp              r2,r0
+    8 00000014 2A000000        bcs              down
+    9 00000018 E1A00002        mov              r0,r2
+   10 0000001C E2533001 
+                       down    subs             r3,r3,#1
+   11 00000020 1AFFFFF9        bne              up
+   12 00000024 EAFFFFFE 
+                       he      b                he
+   13 00000028         
+   14 00000028 00000002 
+              00000005 
+              00000006 
+              00000001 
+              00000003 
+              00000004 
+              00000007 
+              00000008 
+              00000009 
+              0000000A series  dcd              2,5,6,1,3,4,7,8,9,10
+   15 00000050                 end
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork --depend=smallest.
+d -osmallest.o -IC:\Keil\ARM\RV31\Inc -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM
+\Inc\Philips --predefine="__EVAL SETA 1" --list=smallest.lst smallest.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+down 0000001C
+
+Symbol: down
+   Definitions
+      At line 10 in file smallest.s
+   Uses
+      At line 8 in file smallest.s
+Comment: down used once
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file smallest.s
+   Uses
+      None
+Comment: entry unused
+he 00000024
+
+Symbol: he
+   Definitions
+      At line 12 in file smallest.s
+   Uses
+      At line 12 in file smallest.s
+Comment: he used once
+series 00000028
+
+Symbol: series
+   Definitions
+      At line 14 in file smallest.s
+   Uses
+      At line 5 in file smallest.s
+Comment: series used once
+small 00000000
+
+Symbol: small
+   Definitions
+      At line 1 in file smallest.s
+   Uses
+      None
+Comment: small unused
+up 0000000C
+
+Symbol: up
+   Definitions
+      At line 6 in file smallest.s
+   Uses
+      At line 11 in file smallest.s
+Comment: up used once
+6 symbols
+328 symbols in table

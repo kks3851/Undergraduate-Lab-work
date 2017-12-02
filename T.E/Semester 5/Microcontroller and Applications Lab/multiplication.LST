@@ -1,0 +1,23 @@
+8051 Assembler           Version 1.00   10/23/114 10:46:11    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\multiplication.a51
+
+
+
+    1 0000 902500               mov dptr,#2500h
+    2 0003 E0                   movx a, @dptr
+    3 0004 F5F0                 mov b,a
+    4 0006 A3                   inc dptr
+    5 0007 E0                   movx a,@dptr
+    6 0008 A4                   mul ab
+    7 0009 902520               mov dptr,#2520h
+    8 000C F0                   movx @dptr,a
+    9 000D A3                   inc dptr
+   10 000E E5F0                 mov a,b
+   11 0010 F0                   movx @dptr,a
+   12 0011 80FE         here:   sjmp here
+   13 0013                      
+
+Defined Symbols:
+
+Defined Labels:
+  here                                      000011  17

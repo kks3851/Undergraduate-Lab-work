@@ -1,0 +1,27 @@
+8051 Assembler           Version 1.00   10/23/114 16:33:04    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\sum_average.a51
+
+
+
+    1 0000 902500               mov dptr,#2500h
+    2 0003 7800                 mov r0,#00h
+    3 0005 790A                 mov r1,#0ah
+    4 0007 89F0                 mov b,r1
+    5 0009 E0           back:   movx a,@dptr
+    6 000A 28                   add a,r0
+    7 000B F8                   mov r0,a
+    8 000C A3                   inc dptr
+    9 000D D9FA                 djnz r1,back
+   10 000F E8                   mov a,r0
+   11 0010 A3                   inc dptr
+   12 0011 F0                   movx @dptr,a
+   13 0012 84                   div ab
+   14 0013 A3                   inc dptr
+   15 0014 F0                   movx @dptr,a
+   16 0015 80FE         here:   sjmp here
+
+Defined Symbols:
+
+Defined Labels:
+  back                                      000009  9
+  here                                      000015  21

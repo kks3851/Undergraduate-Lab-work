@@ -1,0 +1,22 @@
+8051 Assembler           Version 1.00   10/22/114 22:21:02    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\no_of_ones.a51
+
+
+
+    1 0000 7800                 mov r0,#00h
+    2 0002 7A08                 mov r2,#08h
+    3 0004 902500               mov dptr,#2500h
+    4 0007 E0                   movx a,@dptr
+    5 0008 33           l1:     rlc a
+    6 0009 5002                 jnc l2
+    7 000B 08                   inc r0
+    8 000C C3                   clr c
+    9 000D DAF9         l2:     djnz r2,l1
+   10 000F 80FE         here:   sjmp here
+
+Defined Symbols:
+
+Defined Labels:
+  here                                      00000F  15
+  l1                                        000008  8
+  l2                                        00000D  13

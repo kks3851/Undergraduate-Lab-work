@@ -1,0 +1,54 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             mycode,code,readonly
+    2 00000000         entry
+    3 00000000 E3A01001        mov              r1,#01
+    4 00000004 E3A02001        mov              r2,#01
+    5 00000008 E0030291        mul              r3,r1,r2
+    6 0000000C E3A01002        mov              r1,#02
+    7 00000010 E3A02002        mov              r2,#02
+    8 00000014 E0040291        mul              r4,r1,r2
+    9 00000018 E0835004        add              r5,r3,r4
+   10 0000001C EAFFFFFE 
+                       stop    b                stop
+   11 00000020         
+   12 00000020                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork --depend=equation.
+d -oequation.o -IC:\Keil\ARM\RV31\Inc -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM
+\Inc\Philips --predefine="__EVAL SETA 1" --list=equation.lst equation.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file equation.s
+   Uses
+      None
+Comment: entry unused
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 1 in file equation.s
+   Uses
+      None
+Comment: mycode unused
+stop 0000001C
+
+Symbol: stop
+   Definitions
+      At line 10 in file equation.s
+   Uses
+      At line 10 in file equation.s
+Comment: stop used once
+3 symbols
+323 symbols in table

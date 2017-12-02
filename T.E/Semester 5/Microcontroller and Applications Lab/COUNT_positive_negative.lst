@@ -1,0 +1,91 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             count,code
+    2 00000000         entry
+    3 00000000 E28F0038        adr              r0,array
+    4 00000004 E3A02000        mov              r2,#0
+    5 00000008 E3A0600A        mov              r6,#0x0a
+    6 0000000C E3A03000        mov              r3,#0
+    7 00000010 E3A04000        mov              r4,#0
+    8 00000014 E3A05000        mov              r5,#0
+    9 00000018 E3A07000        mov              r7,#0
+   10 0000001C E7901007 
+                       loop    ldr              r1,[r0,r7]
+   11 00000020 E1510002        cmp              r1,r2
+   12 00000024 C2833001        addgt            r3,r3,#1
+   13 00000028 B2844001        addlt            r4,r4,#1
+   14 0000002C 02855001        addeq            r5,r5,#1
+   15 00000030 E2877004        add              r7,r7,#4
+   16 00000034 E2566001        subs             r6,r6,#1
+   17 00000038 1AFFFFF7        bne              loop
+   18 0000003C EAFFFFFE 
+                       here    b                here
+   19 00000040         
+   20 00000040                 align
+   21 00000040 00000001 
+              00000002 
+              00000000 
+              00000001 
+              00000000 
+              00000002 
+              00000000 
+              FFFFFFFF 
+              00000000 
+              FFFFFFF9 array   dcd              1,2,0,1,0,2,0,-1,0,-7
+   22 00000068                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork --depend=COUNT_pos
+itive_negative.d -oCOUNT_positive_negative.o -IC:\Keil\ARM\RV31\Inc -IC:\Keil\A
+RM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=C
+OUNT_positive_negative.lst COUNT_positive_negative.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+array 00000040
+
+Symbol: array
+   Definitions
+      At line 21 in file COUNT_positive_negative.s
+   Uses
+      At line 3 in file COUNT_positive_negative.s
+Comment: array used once
+count 00000000
+
+Symbol: count
+   Definitions
+      At line 1 in file COUNT_positive_negative.s
+   Uses
+      None
+Comment: count unused
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file COUNT_positive_negative.s
+   Uses
+      None
+Comment: entry unused
+here 0000003C
+
+Symbol: here
+   Definitions
+      At line 18 in file COUNT_positive_negative.s
+   Uses
+      At line 18 in file COUNT_positive_negative.s
+Comment: here used once
+loop 0000001C
+
+Symbol: loop
+   Definitions
+      At line 10 in file COUNT_positive_negative.s
+   Uses
+      At line 17 in file COUNT_positive_negative.s
+Comment: loop used once
+5 symbols
+325 symbols in table

@@ -1,0 +1,22 @@
+8051 Assembler           Version 1.00   10/22/114 21:47:52    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\odd.a51
+
+
+
+    1 0000 7800                 mov r0,#00h
+    2 0002 902500               mov dptr,#2500h
+    3 0005 790A                 mov r1,#0ah
+    4 0007 E0           up:     movx a,@dptr
+    5 0008 13                   rrc a
+    6 0009 5001                 jnc down
+    7 000B 08                   inc r0
+    8 000C A3           down:   inc dptr
+    9 000D D9F8                 djnz r1,up
+   10 000F 80FE         here:   sjmp here
+
+Defined Symbols:
+
+Defined Labels:
+  down                                      00000C  12
+  here                                      00000F  15
+  up                                        000007  7

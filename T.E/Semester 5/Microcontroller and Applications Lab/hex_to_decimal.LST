@@ -1,0 +1,30 @@
+8051 Assembler           Version 1.00   10/23/114 16:01:33    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\hex_to_decimal.a51
+
+
+
+    1 0000 902500               mov dptr,#2500h
+    2 0003 E0                   movx a,@dptr
+    3 0004 75F064               mov b,#64h
+    4 0007 84                   div ab
+    5 0008 FA                   mov r2,a
+    6 0009 E5F0                 mov a,b
+    7 000B 75F00A               mov b,#0ah
+    8 000E 84                   div ab
+    9 000F F9                   mov r1,a
+   10 0010 A8F0                 mov r0,b
+   11 0012 E8                   mov a,r0
+   12 0013 A3                   inc dptr
+   13 0014 F0                   movx @dptr,a
+   14 0015 A3                   inc dptr
+   15 0016 E9                   mov a,r1
+   16 0017 F0                   movx @dptr,a
+   17 0018 A3                   inc dptr
+   18 0019 EA                   mov a,r2
+   19 001A F0                   movx @dptr,a  
+   20 001B 80FE         here:   sjmp here
+
+Defined Symbols:
+
+Defined Labels:
+  here                                      00001B  27

@@ -1,0 +1,95 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             largest,code,readonly
+    2 00000000         entry
+    3 00000000 E3A000FF        mov              r0,#0xff
+    4 00000004 E3A0300A        mov              r3,#10
+    5 00000008 E59F1040        ldr              r1,=data_port
+    6 0000000C E4912004 
+                       up      ldr              r2,[r1],#4
+    7 00000010 E1500002        cmp              r0,r2
+    8 00000014 2A000000        bcs              down
+    9 00000018 E1A00002        mov              r0,r2
+   10 0000001C E2533001 
+                       down    subs             r3,r3,#1
+   11 00000020 1AFFFFF9        bne              up
+   12 00000024 EAFFFFFE 
+                       here    b                here
+   13 00000028         
+   14 00000028         
+   15 00000028 00000002 
+              00000004 
+              00000008 
+              00000006 
+              00000001 
+              00000009 
+              00000003 
+              00000007 
+              00000005 
+              00000000 data_port
+                               DCD              2,4,8,6,1,9,3,7,5,0
+   16 00000050                 END
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork --depend=largest.d
+ -olargest.o -IC:\Keil\ARM\RV31\Inc -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\I
+nc\Philips --predefine="__EVAL SETA 1" --list=largest.lst largest.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data_port 00000028
+
+Symbol: data_port
+   Definitions
+      At line 15 in file largest.s
+   Uses
+      At line 5 in file largest.s
+Comment: data_port used once
+down 0000001C
+
+Symbol: down
+   Definitions
+      At line 10 in file largest.s
+   Uses
+      At line 8 in file largest.s
+Comment: down used once
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file largest.s
+   Uses
+      None
+Comment: entry unused
+here 00000024
+
+Symbol: here
+   Definitions
+      At line 12 in file largest.s
+   Uses
+      At line 12 in file largest.s
+Comment: here used once
+largest 00000000
+
+Symbol: largest
+   Definitions
+      At line 1 in file largest.s
+   Uses
+      None
+Comment: largest unused
+up 0000000C
+
+Symbol: up
+   Definitions
+      At line 6 in file largest.s
+   Uses
+      At line 11 in file largest.s
+Comment: up used once
+6 symbols
+328 symbols in table

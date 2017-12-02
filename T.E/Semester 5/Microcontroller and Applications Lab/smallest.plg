@@ -1,0 +1,75 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\arm_controller\smallest.uvproj
+Project File Date:  03/16/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling op.c...
+..\..\..\sem 6\project\final\op.c(52): warning C206: 'send_char': missing function-prototype
+..\..\..\sem 6\project\final\op.c(52): error C267: 'send_char': requires ANSI-style prototype
+..\..\..\sem 6\project\final\op.c(117): error C231: 'send_char': redefinition
+..\..\..\sem 6\project\final\op.c(122): error C231: 'send_char': redefinition
+..\..\..\sem 6\project\final\op.c(153): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling op.c...
+..\..\..\sem 6\project\final\op.c(52): warning C206: 'send_char': missing function-prototype
+..\..\..\sem 6\project\final\op.c(52): error C267: 'send_char': requires ANSI-style prototype
+..\..\..\sem 6\project\final\op.c(117): error C231: 'send_char': redefinition
+..\..\..\sem 6\project\final\op.c(123): error C231: 'send_char': redefinition
+..\..\..\sem 6\project\final\op.c(154): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling op.c...
+..\..\..\sem 6\project\final\op.c(52): warning C206: 'send_char': missing function-prototype
+..\..\..\sem 6\project\final\op.c(52): error C267: 'send_char': requires ANSI-style prototype
+..\..\..\sem 6\project\final\op.c(117): error C231: 'send_char': redefinition
+..\..\..\sem 6\project\final\op.c(123): error C231: 'send_char': redefinition
+Target not created
+Build target 'Target 1'
+compiling op2.c...
+..\..\..\sem 6\project\final\op2.c(53): warning C206: 'send_char': missing function-prototype
+..\..\..\sem 6\project\final\op2.c(53): error C267: 'send_char': requires ANSI-style prototype
+..\..\..\sem 6\project\final\op2.c(118): error C231: 'send_char': redefinition
+..\..\..\sem 6\project\final\op2.c(123): error C231: 'send_char': redefinition
+..\..\..\sem 6\project\final\op2.c(154): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling op2.c...
+..\..\..\sem 6\project\final\op2.c(53): warning C206: 'send_char': missing function-prototype
+..\..\..\sem 6\project\final\op2.c(53): error C267: 'send_char': requires ANSI-style prototype
+..\..\..\sem 6\project\final\op2.c(118): error C231: 'send_char': redefinition
+..\..\..\sem 6\project\final\op2.c(123): error C231: 'send_char': redefinition
+Target not created
+Rebuild target 'Target 1'
+compiling op2.c...
+..\..\..\sem 6\project\final\op2.c(120): warning C280: 'i': unreferenced local variable
+linking...
+Program Size: data=29.0 xdata=0 code=562
+creating hex file from "smallest"...
+"smallest" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+compiling op2.c...
+..\..\..\sem 6\project\final\op2.c(120): warning C280: 'i': unreferenced local variable
+linking...
+Program Size: data=29.0 xdata=0 code=562
+creating hex file from "smallest"...
+"smallest" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+compiling op2.c...
+..\..\..\sem 6\project\final\op2.c(120): warning C280: 'i': unreferenced local variable
+linking...
+Program Size: data=29.0 xdata=0 code=562
+creating hex file from "smallest"...
+"smallest" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+compiling op2.c...
+..\..\..\sem 6\project\final\op2.c(130): warning C280: 'i': unreferenced local variable
+linking...
+Program Size: data=33.0 xdata=0 code=625
+creating hex file from "smallest"...
+"smallest" - 0 Error(s), 1 Warning(s).

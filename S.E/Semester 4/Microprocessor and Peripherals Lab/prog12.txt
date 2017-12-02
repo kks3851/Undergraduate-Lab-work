@@ -1,0 +1,33 @@
+12.Write assembly language program for 8086 to add two  4 digit BCD number. First BCD number is located at memory location DS:400H (LSD) and DS:401H (MSD).Second BCD number is located at memory location DS:402H (LSD) and DS: 403H (MSD) Store the result in memory location DS:404H (LSD), DS :405H (Next MSD).and DS:406H(MSD).
+
+assume cs:code,ds:data
+data segment
+org 400h
+pl dw 20h
+ph dw 23h
+ql dw 57h
+qr dw 32h
+r1 dw (?)
+r2 dw (?)
+r3 dw (?)
+data ends
+code segment
+start:
+mov ax,data
+mov ds,ax
+mov al,pl
+mov bl,ql
+add al,bl
+daa
+mov r1,al
+mov al,ph
+mov bl,qh
+adc al,bl
+daa
+mov r2,al    
+mov dl,00h
+adc dl,00h
+mov r3,dl  
+int 3 
+code ends
+end start

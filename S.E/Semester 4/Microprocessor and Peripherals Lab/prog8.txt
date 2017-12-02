@@ -1,0 +1,29 @@
+8.Write assembly language program for 8086 to subtract two , 4 digit BCD number. First BCD number is located at memory location DS:500H (LSD) and DS:501H (MSD).Second BCD number is located at memory location DS:502H (LSD) and DS:503H (MSD) Store the result in memory location DS:504H (LSD) and DS:505H(MSD).
+
+assume cs:code,ds:data
+data segment
+org 0500h
+pl dw 55h
+ph dw 55h
+ql dw 33h
+qr dw 33h
+r1 dw (?)
+r2 dw (?)
+data ends
+code segment
+start:
+mov ax,data
+mov ds,ax
+mov al,pl
+mov bl,ql
+sub al,bl
+das
+mov r1,al
+mov al,ph
+mov bl,qh
+sbb al,bl
+das
+mov r2,al      
+int 3 
+code ends
+end start

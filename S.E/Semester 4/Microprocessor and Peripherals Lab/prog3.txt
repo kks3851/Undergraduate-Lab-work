@@ -1,0 +1,30 @@
+3.Write assembly language program for 8086 to  find sum and average of series of ten , 8 bit number. Series starts from address DS : 400H onwards Store the Sum in memory location DS : 40AH (LSB) and DS :40BH (MSB).Store the average in memory location DS: 40CH (Quotient) and DS: 40DH ( Remainder ).
+
+assume cs:code,ds:data
+data segment
+org 400h
+series db 01h,01h,01h,01h,01h,01h,01h,01h,01h,01h
+data ends
+code segment
+start:
+mov ax,data
+mov ds,ax
+mov ax,0000h
+mov cx,0ah
+lea si,series
+l2:mov bx,[si]
+   add ax,bx
+   inc si
+   loop l2
+mov [si],al
+inc si
+mov [si],ah
+inc si   
+mov dl,0ah
+div dl
+mov [si],al
+inc si
+mov [si],ah    
+int 3
+code ends
+end start

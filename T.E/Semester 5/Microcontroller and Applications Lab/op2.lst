@@ -1,0 +1,192 @@
+C51 COMPILER V9.51   OP2                                                                   03/16/2015 16:28:57 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE OP2
+OBJECT MODULE PLACED IN .\op2.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\..\..\sem 6\project\final\op2.c DEBUG OBJECTEXTEND PRINT(.\op2.lst) TABS
+                    -(2) OBJECT(.\op2.obj)
+
+line level    source
+
+   1          #include<regx52.h>
+   2          #include<stdio.h>
+   3          void delayms(int);
+   4          void cmnd(void);
+   5          void delay(void);
+   6          void disp(void);
+   7          void send_char(char);
+   8          
+   9          sbit COL1=P1^0;
+  10          sbit COL2=P1^1;
+  11          sbit COL3=P1^2;
+  12          sbit COL4=P1^3;
+  13          
+  14          sbit ROW1=P1^4;
+  15          sbit ROW2=P1^5;
+  16          sbit ROW3=P1^6;
+  17          sbit ROW4=P1^7;
+  18          
+  19          unsigned char ROW=0,COL=0;
+  20          char value='\0', temp=0;
+  21          char keypad[4][4]=  { '0','1','2','3',
+  22                  '4','5','6','7',
+  23                  '8','9','A','B',
+  24                  'C','D','E','F' };    //look up table
+  25          
+  26          char key(void);
+  27          void main(void)
+  28          { int i;
+  29   1        
+  30   1        ROW1 = 0; //MAKE ALL ROWs IN KEYPAD TO ZERO
+  31   1        ROW2 = 0;
+  32   1        ROW3 = 0;
+  33   1        ROW4 = 0;   
+  34   1        COL1 = 1; // MAKE ALL COL'S AS HIGH
+  35   1        COL2 = 1;
+  36   1        COL3 = 1;
+  37   1        COL4 = 1;
+  38   1      
+  39   1       
+  40   1        while(1)
+  41   1        {
+  42   2          //LCD_init();
+  43   2       P2=0x38;
+  44   2       cmnd();
+  45   2       P2=0x0F;
+  46   2       cmnd();
+  47   2       P2=0x01;
+  48   2       cmnd();
+  49   2       P2=0x06;
+  50   2       cmnd();
+  51   2      
+  52   2          for(i=0;i<=6;i++) //how many numbers you want to take 
+  53   2          {   
+  54   3            value =  key();//taking value from keypad
+C51 COMPILER V9.51   OP2                                                                   03/16/2015 16:28:57 PAGE 2   
+
+  55   3            delayms(50);        
+  56   3            send_char(value);//sending value of keypad to lcd
+  57   3            delayms(100);
+  58   3          
+  59   3          }
+  60   2            }
+  61   1      
+  62   1      } 
+  63          //checking which key is pressed
+  64          char key()
+  65          {
+  66   1        
+  67   1        while(1)
+  68   1        {
+  69   2      
+  70   2          ROW1 = 0; //MAKE FIRST ROW IN KEYPAD TO ZERO
+  71   2          ROW2 = 1;
+  72   2          ROW3 = 1;
+  73   2          ROW4 = 1;   
+  74   2          COL1 = 1; // MAKE ALL COL'S AS HIGH
+  75   2          COL2 = 1;
+  76   2          COL3 = 1;
+  77   2          COL4 = 1;
+  78   2          if(COL1 == 0){while(COL1 == 0);ROW=1;COL=1;break;}  
+  79   2          if(COL2 == 0){while(COL2 == 0);ROW=1;COL=2;break;}  
+  80   2          if(COL3 == 0){while(COL3 == 0);ROW=1;COL=3;break;}
+  81   2          if(COL4 == 0){while(COL4 == 0);ROW=1;COL=4;break;}    
+  82   2          ROW1 = 1; 
+  83   2          ROW2 = 0; //MAKE SECOND ROW IN KEYPAD TO ZERO
+  84   2          ROW3 = 1;
+  85   2          ROW4 = 1;   
+  86   2          COL1 = 1; // MAKE ALL COL'S AS HIGH
+  87   2          COL2 = 1;
+  88   2          COL3 = 1;
+  89   2          COL4 = 1;
+  90   2          if(COL1 == 0){while(COL1 == 0);ROW=2;COL=1;break;}  
+  91   2          if(COL2 == 0){while(COL2 == 0);ROW=2;COL=2;break;}  
+  92   2          if(COL3 == 0){while(COL3 == 0);ROW=2;COL=3;break;}
+  93   2          if(COL4 == 0){while(COL4 == 0);ROW=2;COL=4;break;}
+  94   2          ROW1 = 1; 
+  95   2          ROW2 = 1; 
+  96   2          ROW3 = 0;//MAKE THIRD ROW IN KEYPAD TO ZERO
+  97   2          ROW4 = 1;   
+  98   2          COL1 = 1; // MAKE ALL COL'S AS HIGH
+  99   2          COL2 = 1;
+ 100   2          COL3 = 1;
+ 101   2          COL4 = 1;
+ 102   2          if(COL1 == 0){while(COL1 == 0);ROW=3;COL=1;break;}  
+ 103   2          if(COL2 == 0){while(COL2 == 0);ROW=3;COL=2;break;}  
+ 104   2          if(COL3 == 0){while(COL3 == 0);ROW=3;COL=3;break;}
+ 105   2          if(COL4 == 0){while(COL4 == 0);ROW=3;COL=4;break;}
+ 106   2          ROW1 = 1; 
+ 107   2          ROW2 = 1; 
+ 108   2          ROW3 = 1;
+ 109   2          ROW4 = 0;//MAKE 4TH ROW IN KEYPAD TO ZERO   
+ 110   2          COL1 = 1; // MAKE ALL COL'S AS HIGH
+ 111   2          COL2 = 1;
+ 112   2          COL3 = 1;
+ 113   2          COL4 = 1;
+ 114   2          if(COL1 == 0){while(COL1 == 0);ROW=4;COL=1;break;}  
+ 115   2          if(COL2 == 0){while(COL2 == 0);ROW=4;COL=2;break;}  
+ 116   2          if(COL3 == 0){while(COL3 == 0);ROW=4;COL=3;break;}
+C51 COMPILER V9.51   OP2                                                                   03/16/2015 16:28:57 PAGE 3   
+
+ 117   2          if(COL4 == 0){while(COL4 == 0);ROW=4;COL=4;break;}
+ 118   2          delayms(500);
+ 119   2        }
+ 120   1      
+ 121   1        return  keypad[ROW-1][COL-1];
+ 122   1      }
+ 123          void delayms(int x)
+ 124          {
+ 125   1        int i=0;
+ 126   1        for(i=0;i<x;i++);
+ 127   1      }
+ 128          void send_char(char a)
+ 129          {//displaying the keys pressed on keypad
+ 130   1        int i;
+ 131   1        P2=a;
+ 132   1        disp();
+ 133   1        delay();
+ 134   1       }
+*** WARNING C280 IN LINE 130 OF ..\..\..\sem 6\project\final\op2.c: 'i': unreferenced local variable
+ 135            
+ 136           void cmnd()
+ 137           {
+ 138   1        P0_0=0;
+ 139   1        P0_1=0;
+ 140   1        P0_2=1;
+ 141   1        P0_2=0;
+ 142   1        delay();
+ 143   1        }
+ 144            void disp()
+ 145            {
+ 146   1         P0_0=1;
+ 147   1         P0_1=0;
+ 148   1         P0_2=1;
+ 149   1         P0_2=0;
+ 150   1        delay();
+ 151   1        delay();
+ 152   1        }
+ 153           void delay()
+ 154           {
+ 155   1         int i;
+ 156   1         for(i=0;i<10000;i++)
+ 157   1         {
+ 158   2          P0_2=1;
+ 159   2        P0_0=0;//
+ 160   2        P0_1=1;//
+ 161   2        P0_2=1;//?
+ 162   2        }
+ 163   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    451    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     20       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

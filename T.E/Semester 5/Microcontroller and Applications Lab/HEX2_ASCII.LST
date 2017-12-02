@@ -1,0 +1,26 @@
+8051 Assembler           Version 1.00   10/24/114 19:46:23    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\HEX2_ASCII.a51
+
+
+
+    1 0000 7A0A                 MOV R2,#0AH
+    2 0002 902500               MOV DPTR,#2500H
+    3 0005 E0                   MOVX A,@DPTR
+    4 0006 FB                   MOV R3,A
+    5 0007 9A                   SUBB A,R2
+    6 0008 5005                 JNC DOWN
+    7 000A EB                   MOV A,R3
+    8 000B 2430                 ADD A,#30H
+    9 000D 8003                 SJMP UP
+   10 000F EB           DOWN:   MOV A,R3
+   11 0010 2437                 ADD A,#37H
+   12 0012 A3           UP:     INC DPTR
+   13 0013 F0                   MOVX @DPTR,A
+   14 0014 80FE         HERE:   SJMP HERE
+
+Defined Symbols:
+
+Defined Labels:
+  DOWN                                      00000F  15
+  HERE                                      000014  20
+  UP                                        000012  18

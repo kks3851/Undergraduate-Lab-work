@@ -1,0 +1,104 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             mycode,CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000 E59F1044        ldr              r1,=num
+    4 00000004 E5914000        ldr              r4,[r1]
+    5 00000008 E204400F        and              r4,#0x0f
+    6 0000000C E1A05004        mov              r5,r4
+    7 00000010 E3550009        cmp              r5,#9
+    8 00000014 8A000001        bhi              down
+    9 00000018 E2855030        add              r5,r5,#0x30
+   10 0000001C EA000000        b                jump1
+   11 00000020 E2855037 
+                       down    add              r5,r5,#0x37
+   12 00000024 E5914000 
+                       jump1   ldr              r4,[r1]
+   13 00000028 E20440F0        and              r4,#0xf0
+   14 0000002C E1A06224        mov              r6,r4 ,lsr #4
+   15 00000030 E3560009        cmp              r6,#9
+   16 00000034 8A000001        bhi              up
+   17 00000038 E2866030        add              r6,r6,#0x30
+   18 0000003C EA000000        b                stop
+   19 00000040 E2866037 
+                       up      add              r6,r6,#0x37
+   20 00000044         
+   21 00000044 EAFFFFFE 
+                       stop    b                stop
+   22 00000048         ALIGN
+   23 00000048 99      num     dcb              0x99
+   24 00000049                 END
+              00 00 00 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -ohex_ascii.o -IC:
+\Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=hex_ascii.lst hex_asci
+i.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ALIGN 00000048
+
+Symbol: ALIGN
+   Definitions
+      At line 22 in file hex_ascii.s
+   Uses
+      None
+Comment: ALIGN unused
+down 00000020
+
+Symbol: down
+   Definitions
+      At line 11 in file hex_ascii.s
+   Uses
+      At line 8 in file hex_ascii.s
+Comment: down used once
+jump1 00000024
+
+Symbol: jump1
+   Definitions
+      At line 12 in file hex_ascii.s
+   Uses
+      At line 10 in file hex_ascii.s
+Comment: jump1 used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 1 in file hex_ascii.s
+   Uses
+      None
+Comment: mycode unused
+num 00000048
+
+Symbol: num
+   Definitions
+      At line 23 in file hex_ascii.s
+   Uses
+      At line 3 in file hex_ascii.s
+Comment: num used once
+stop 00000044
+
+Symbol: stop
+   Definitions
+      At line 21 in file hex_ascii.s
+   Uses
+      At line 18 in file hex_ascii.s
+      At line 21 in file hex_ascii.s
+
+up 00000040
+
+Symbol: up
+   Definitions
+      At line 19 in file hex_ascii.s
+   Uses
+      At line 16 in file hex_ascii.s
+Comment: up used once
+7 symbols
+329 symbols in table

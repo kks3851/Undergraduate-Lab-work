@@ -1,0 +1,23 @@
+8051 Assembler           Version 1.00   10/24/114 19:19:42    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\even_add.a51
+
+
+
+    1 0000 902500               mov dptr,#2500h
+    2 0003 7800                 mov r0,#00h
+    3 0005 7900                 mov r1,#00h
+    4 0007 7A0A                 mov r2,#0ah
+    5 0009 E8           loop:   mov a,r0
+    6 000A 29                   add a,r1
+    7 000B 08                   inc r0
+    8 000C 08                   inc r0
+    9 000D F9                   mov r1,a
+   10 000E DAF9                 djnz r2,loop
+   11 0010 F0                   movx @dptr,a
+   12 0011 80FE         here:   sjmp here
+
+Defined Symbols:
+
+Defined Labels:
+  here                                      000011  17
+  loop                                      000009  9

@@ -1,0 +1,19 @@
+*** Creating Trace Output File 'smallest.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"count_positive_negative.o"'
+### ADS-LD Command completed:
+--device DARMP "count_positive_negative.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x40000000 --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\smallest.map" -o smallest.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'smallest.axf'
+### ADS-LD Command File: 'smallest.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'smallest.lnp', Handle=0x00000610
+### Writing '.lnp' file
+### ADS-LD Command file 'smallest.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

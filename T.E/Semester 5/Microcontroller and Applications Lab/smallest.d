@@ -1,0 +1,1 @@
+smallest.o: smallest.s

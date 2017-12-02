@@ -1,0 +1,57 @@
+8051 Assembler           Version 1.00   10/24/114 17:31:52    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\multiplication_16.a51
+
+
+
+    1 0000 902500               mov dptr,#2500h
+    2 0003 E0                   movx a,@dptr
+    3 0004 F8                   mov r0,a
+    4 0005 A3                   inc dptr
+    5 0006 E0                   movx a,@dptr
+    6 0007 F9                   mov r1,a
+    7 0008 A3                   inc dptr
+    8 0009 E0                   movx a,@dptr
+    9 000A FA                   mov r2,a
+   10 000B A3                   inc dptr
+   11 000C E0                   movx a,@dptr
+   12 000D FB                   mov r3,a
+   13 000E                      
+   14 000E E8                   mov a,r0
+   15 000F 8AF0                 mov b,r2
+   16 0011 A4                   mul ab
+   17 0012 ACF0                 mov r4,b
+   18 0014 A3                   inc dptr
+   19 0015 F0                   movx @dptr,a
+   20 0016 E9                   mov a,r1
+   21 0017 8AF0                 mov b,r2
+   22 0019 A4                   mul ab
+   23 001A ADF0                 mov r5,b
+   24 001C 2C                   add a,r4
+   25 001D FC                   mov r4,a
+   26 001E E8                   mov a,r0
+   27 001F 8BF0                 mov b,r3
+   28 0021 A4                   mul ab
+   29 0022 AEF0                 mov r6,b
+   30 0024 3C                   addc a,r4
+   31 0025 A3                   inc dptr
+   32 0026 F0                   movx @dptr,a
+   33 0027 ED                   mov a,r5
+   34 0028 3E                   addc a,r6
+   35 0029 FD                   mov r5,a
+   36 002A E9                   mov a,r1
+   37 002B 8BF0                 mov b,r3
+   38 002D A4                   mul ab
+   39 002E AEF0                 mov r6,b
+   40 0030 3D                   addc a,r5
+   41 0031 A3                   inc dptr
+   42 0032 F0                   movx @dptr,a
+   43 0033 EE                   mov a,r6
+   44 0034 3400                 addc a,#00h
+   45 0036 A3                   inc dptr
+   46 0037 F0                   movx @dptr,a        
+   47 0038 80FE         here:   sjmp here
+
+Defined Symbols:
+
+Defined Labels:
+  here                                      000038  56

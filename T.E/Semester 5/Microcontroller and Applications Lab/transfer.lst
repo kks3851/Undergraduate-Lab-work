@@ -1,0 +1,117 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             mycode,code
+    2 00000000                 entry
+    3 00000000 E59F1018        ldr              r1,=source
+    4 00000004 E59F2018        ldr              r2,=distance
+    5 00000008 E3A0300A        mov              r3,#10
+    6 0000000C E4914004 
+                       up      ldr              r4,[r1],#04
+    7 00000010 E4824004        str              r4,[r2],#04
+    8 00000014 E2533001        subs             r3,r3,#01
+    9 00000018 1AFFFFFB        bne              up
+   10 0000001C EAFFFFFE 
+                       here    b                here
+   11 00000020         
+   12 00000020 00000000 
+              00000000         area             mydata,data,readwrite
+   13 00000000 00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00       source  space            40
+   14 00000028 00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00       distance
+                               space            40
+   15 00000050                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork --depend=transfer.
+d -otransfer.o -IC:\Keil\ARM\RV31\Inc -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM
+\Inc\Philips --predefine="__EVAL SETA 1" --list=transfer.lst transfer.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+here 0000001C
+
+Symbol: here
+   Definitions
+      At line 10 in file transfer.s
+   Uses
+      At line 10 in file transfer.s
+Comment: here used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 1 in file transfer.s
+   Uses
+      None
+Comment: mycode unused
+up 0000000C
+
+Symbol: up
+   Definitions
+      At line 6 in file transfer.s
+   Uses
+      At line 9 in file transfer.s
+Comment: up used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+distance 00000028
+
+Symbol: distance
+   Definitions
+      At line 14 in file transfer.s
+   Uses
+      At line 4 in file transfer.s
+Comment: distance used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 12 in file transfer.s
+   Uses
+      None
+Comment: mydata unused
+source 00000000
+
+Symbol: source
+   Definitions
+      At line 13 in file transfer.s
+   Uses
+      At line 3 in file transfer.s
+Comment: source used once
+3 symbols
+328 symbols in table

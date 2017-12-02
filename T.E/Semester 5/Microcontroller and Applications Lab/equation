@@ -1,0 +1,17 @@
+		area mycode,code,readonly
+entry
+		ldr r1,=a
+		ldr r2,=b
+		mul r3,r1,r2
+		ldr r1,=c
+		ldr r2,=d
+		mul r4,r1,r2
+		add r5,r3,r4
+stop	b stop
+
+align
+a dcd 1
+b dcd 1
+c dcd 1
+d dcd 1
+	end

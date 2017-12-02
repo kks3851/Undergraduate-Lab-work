@@ -1,0 +1,53 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             add,code,readonly
+    2 00000000         entry
+    3 00000000 E3A00001        mov              r0,#0x0000001
+    4 00000004 E3A01001        mov              r1,#0x0000001
+    5 00000008 E3A02002        mov              r2,#0x0000002
+    6 0000000C E3A03002        mov              r3,#0x0000002
+    7 00000010 E0922000        adds             r2,r2,r0
+    8 00000014 E0A33001        adc              r3,r3,r1
+    9 00000018 EAFFFFFE 
+                       stop    b                stop
+   10 0000001C         
+   11 0000001C                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork --depend=add64.d -
+oadd64.o -IC:\Keil\ARM\RV31\Inc -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\P
+hilips --predefine="__EVAL SETA 1" --list=add64.lst add64.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+add 00000000
+
+Symbol: add
+   Definitions
+      At line 1 in file add64.s
+   Uses
+      None
+Comment: add unused
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file add64.s
+   Uses
+      None
+Comment: entry unused
+stop 00000018
+
+Symbol: stop
+   Definitions
+      At line 9 in file add64.s
+   Uses
+      At line 9 in file add64.s
+Comment: stop used once
+3 symbols
+323 symbols in table

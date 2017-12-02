@@ -1,0 +1,36 @@
+8051 Assembler           Version 1.00   10/23/114 12:39:34    Page 1
+C:\Users\Karan\Desktop\workshop\extc\sem 5\mca\practs\8051\hex_to_ascii_1.a51
+
+
+
+    1 0000 7830         mov r0,#30h
+    2 0002 7930         mov r1,#30h
+    3 0004 7A30         mov r2,#30h
+    4 0006 B40001       cjne a,#00h,c1_hextobcd 
+    5 0009 22           ret  
+    6 000A                
+    7 000A              
+    8 000A              c1_hextobcd:
+    9 000A 7B02         mov r3,#2h
+   10 000C EB           mov a,r3
+   11 000D C3           clr c
+   12 000E 75F064       mov b,#100  
+   13 0011 84           div ab
+   14 0012 48           orl a,r0
+   15 0013 F8           mov r0,a
+   16 0014 C3           clr c
+   17 0015 E5F0         mov a,b
+   18 0017 75F00A       mov b,#10
+   19 001A 84           div ab 
+   20 001B 49           orl a,r1
+   21 001C F9           mov r1,a
+   22 001D E5F0         mov a,b
+   23 001F 4A           orl a,r2
+   24 0020 FA           mov r2,a 
+   25 0021 22           ret
+   26 0022               
+
+Defined Symbols:
+
+Defined Labels:
+  c1_hextobcd                               00000A  10

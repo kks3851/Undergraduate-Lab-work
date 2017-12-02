@@ -1,0 +1,11 @@
+C=0.3*(10^(-12));
+L=61.42*(10^(-9));
+R=34.18*(10^(-3));
+f=1000:10000:10000000000;
+z=(1./((1i*2*3.14*f*C)+(1./(R+(2*3.14*f*L)))));
+semilogx(f,abs(z));
+grid on;
+hold on;
+xlabel('Frequency');
+ylabel('Impedance');
+title(' HIGH FREQUENCY RESPONSE OF INDUCTOR');
